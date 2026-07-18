@@ -1,10 +1,11 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Point de fin de journée</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><header class="hero"><div class="kicker">Étape 4 sur 6</div><h1>Point de fin de journée</h1><p>Avant de poursuivre, faites le point sur vos repères et vos besoins.</p></header><main>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Point de fin de journée</title><link rel="stylesheet" href="assets/style.css"></head><body data-form-type="journee"><div class="app"><header class="hero"><div class="kicker">Étape 4 sur 6</div><h1>Point de fin de journée</h1><p>Avant de poursuivre, faites le point sur vos repères et vos besoins.</p></header><main>
 <section id="formStep">
   <div class="card mandatory-card">
     <h2>Cette étape fait partie de votre parcours</h2>
     <p>Vos réponses permettent d’identifier les repères acquis et les éléments à revoir avant la suite.</p>
   </div>
   <div class="card">
+    <div class="field"><label>Nom et prénom</label><textarea name="Nom et prénom" data-form style="min-height:56px" placeholder="Indiquez votre identité"></textarea></div>
     <div class="field"><label>Comment cela s’est-il passé ?</label><div class="choice-grid"><button class="choice" data-value="Très bien">Très bien</button><button class="choice" data-value="Bien">Bien</button><button class="choice" data-value="Difficile">Difficile</button><button class="choice" data-value="Très difficile">Très difficile</button></div><input type="hidden" name="Bilan général" data-form></div>
     <div class="field"><label>Vous êtes-vous senti suffisamment accompagné ?</label><div class="choice-grid"><button class="choice" data-value="Oui">Oui</button><button class="choice" data-value="Partiellement">Partiellement</button><button class="choice" data-value="Non">Non</button></div><input type="hidden" name="Accompagnement" data-form></div>
     <div class="field"><label>À combien estimez-vous connaître les lieux ?</label><div class="range-row"><input id="lieux" type="range" min="0" max="100" value="50" name="Connaissance des lieux" data-form><div class="range-value" data-range="lieux"></div></div></div>
@@ -19,7 +20,7 @@
   <h2 class="section-title">Vérifiez avant la validation</h2>
   <div id="reviewContent"></div>
   <button class="btn secondary" style="width:100%;margin-top:13px" onclick="backToForm()">Modifier mes réponses</button>
-  <button class="btn primary" style="width:100%;margin-top:10px" onclick="markDone('bilan_journee')">Valider et transmettre</button>
+  <button class="btn primary" data-submit-review style="width:100%;margin-top:10px" onclick="submitReview(STEPS.day)">Valider et transmettre</button>
 </section>
 </main>
 <nav class="bottom-nav">

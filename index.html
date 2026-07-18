@@ -1,9 +1,15 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Bienvenue</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><header class="hero"><div class="kicker">Brancardage</div><h1>Bienvenue</h1><p>Vos repères pour commencer sereinement et suivre votre parcours d’arrivée.</p></header><main>
-<div class="card mandatory-card">
-  <div class="progress-wrap"><div class="progress"><span style="width:50%"></span></div><div class="progress-text">3 étapes sur 6 terminées</div></div>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Bienvenue</title><link rel="stylesheet" href="assets/style.css"></head><body data-form-type=""><div class="app"><header class="hero"><div class="kicker">Brancardage</div><h1>Bienvenue</h1><p>Vos repères pour commencer sereinement et suivre votre parcours d’arrivée.</p></header><main>
+<div class="card mandatory-card" data-day-reminder>
+  <div class="progress-wrap"><div class="progress"><span data-progress-bar></span></div><div class="progress-text" data-progress-text></div></div>
   <h2>Votre étape de première journée reste à terminer</h2>
   <p>Ce point fait partie de votre parcours d’arrivée et permet de vérifier que vous disposez des repères nécessaires pour poursuivre.</p>
   <a class="btn primary" href="bilan-journee.html">Terminer mon étape</a>
+</div>
+
+<div class="card mandatory-card hidden" data-week-reminder>
+  <h2>Votre point de fin de semaine reste à terminer</h2>
+  <p>Cette dernière étape permet de faire le bilan avant la poursuite en autonomie.</p>
+  <a class="btn primary" href="bilan-semaine.html">Terminer mon parcours de première semaine</a>
 </div>
 
 <h2 class="section-title">Mon parcours</h2>
