@@ -6,388 +6,124 @@
   <meta name="theme-color" content="#0b2f56">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Mes premiers réflexes de brancardier</title>
+  <title>Bienvenue</title>
   <style>
     :root{
-      --navy:#0b2f56;
-      --navy2:#133f70;
-      --blue:#eaf4ff;
-      --green:#eaf7ef;
-      --orange:#fff3e7;
-      --red:#fff0f0;
-      --ink:#17202a;
-      --muted:#667085;
-      --line:#d9e2ec;
-      --white:#fff;
-      --shadow:0 12px 30px rgba(11,47,86,.10);
-      --radius:22px;
+      --navy:#0b2f56; --navy2:#174a7c; --bg:#f4f7fb; --white:#fff;
+      --text:#182230; --muted:#667085; --line:#dbe4ee;
+      --blue:#eaf4ff; --green:#eaf7ef; --orange:#fff3e7; --purple:#f2ecff;
+      --shadow:0 14px 34px rgba(11,47,86,.11); --radius:25px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
-      margin:0;
+      margin:0;background:var(--bg);color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:#f4f7fb;
-      color:var(--ink);
-      -webkit-font-smoothing:antialiased;
+      -webkit-font-smoothing:antialiased
     }
     a{text-decoration:none;color:inherit}
-    button{font:inherit}
-    .app{
-      min-height:100vh;
-      max-width:760px;
-      margin:0 auto;
-      background:#f4f7fb;
-      padding-bottom:110px;
-    }
+    .app{max-width:760px;min-height:100vh;margin:auto;padding-bottom:34px}
     .hero{
-      position:relative;
-      overflow:hidden;
-      background:linear-gradient(150deg,var(--navy),var(--navy2));
-      color:white;
-      padding:calc(22px + env(safe-area-inset-top)) 20px 28px;
-      border-radius:0 0 30px 30px;
-      box-shadow:var(--shadow);
+      position:relative;overflow:hidden;color:#fff;
+      background:linear-gradient(145deg,var(--navy),var(--navy2));
+      padding:calc(34px + env(safe-area-inset-top)) 20px 38px;
+      border-radius:0 0 34px 34px;box-shadow:var(--shadow)
     }
     .hero:after{
-      content:"";
-      position:absolute;
-      right:-60px; top:-55px;
-      width:190px; height:190px;
-      background:rgba(255,255,255,.08);
-      border-radius:50%;
+      content:"";position:absolute;right:-80px;top:-95px;width:245px;height:245px;
+      border-radius:50%;background:rgba(255,255,255,.08)
     }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      opacity:.9;
+    .kicker{font-size:13px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:#dce9f7}
+    h1{margin:14px 0 8px;font-size:clamp(43px,11vw,62px);line-height:1;letter-spacing:-.035em}
+    .hero p{margin:0;max-width:570px;color:#e6eef8;font-size:17px;line-height:1.45}
+    main{padding:22px 16px 28px}
+    .start{
+      display:grid;grid-template-columns:68px 1fr 26px;gap:15px;align-items:center;
+      min-height:148px;padding:19px;border-radius:28px;background:#fff;
+      border:1px solid rgba(11,47,86,.08);box-shadow:var(--shadow)
     }
-    h1{
-      margin:12px 0 8px;
-      font-size:clamp(28px,7vw,42px);
-      line-height:1.05;
-      max-width:620px;
+    .start:active,.tile:active{transform:scale(.985)}
+    .start-icon{
+      width:68px;height:68px;border-radius:21px;display:grid;place-items:center;
+      background:linear-gradient(145deg,#dcedff,#eef7ff);font-size:33px
     }
-    .hero p{
-      margin:0;
-      max-width:600px;
-      line-height:1.45;
-      color:#e7eef8;
-      font-size:15px;
+    .start h2{margin:0 0 6px;color:var(--navy);font-size:24px}
+    .start p{margin:0;color:var(--muted);font-size:14px;line-height:1.38}
+    .arrow{font-size:29px;color:#8fa1b4;text-align:right}
+    .label{margin:24px 4px 13px;color:var(--navy);font-size:19px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .tile{
+      min-height:155px;padding:16px;border-radius:var(--radius);background:#fff;
+      border:1px solid rgba(11,47,86,.07);box-shadow:var(--shadow);
+      display:flex;flex-direction:column;justify-content:space-between
     }
-    .hero-note{
-      margin-top:18px;
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      background:rgba(255,255,255,.12);
-      padding:12px 14px;
-      border-radius:16px;
-      font-size:14px;
-      line-height:1.35;
-      backdrop-filter:blur(8px);
+    .icon{width:54px;height:54px;border-radius:17px;display:grid;place-items:center;font-size:27px}
+    .hospitals .icon{background:var(--green)}
+    .contacts .icon{background:var(--orange)}
+    .reflexes .icon{background:var(--purple)}
+    .help .icon{background:var(--blue)}
+    .tile h3{margin:0 0 4px;color:var(--navy);font-size:18px}
+    .tile p{margin:0;color:var(--muted);font-size:13px;line-height:1.33}
+    .resume{
+      margin-top:17px;padding:14px 15px;border-radius:18px;background:#fff;
+      border:1px solid var(--line);color:#52606d;font-size:13px;line-height:1.4
     }
-    main{padding:18px 16px}
-    .section-title{
-      margin:12px 4px 10px;
-      font-size:20px;
-      line-height:1.2;
-      color:var(--navy);
-    }
-    .intro{
-      margin:0 4px 14px;
-      color:var(--muted);
-      line-height:1.45;
-      font-size:14px;
-    }
-    .steps{
-      display:grid;
-      gap:12px;
-    }
-    .step{
-      background:white;
-      border-radius:var(--radius);
-      padding:16px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(11,47,86,.06);
-      display:grid;
-      grid-template-columns:46px 1fr;
-      gap:13px;
-      align-items:start;
-    }
-    .num{
-      width:46px;height:46px;
-      border-radius:15px;
-      display:grid;
-      place-items:center;
-      background:var(--blue);
-      color:var(--navy);
-      font-weight:900;
-      font-size:20px;
-    }
-    .step:nth-child(4) .num,.step:nth-child(6) .num{background:var(--orange);color:#a14d00}
-    .step:nth-child(5) .num,.step:nth-child(7) .num{background:var(--green);color:#176b39}
-    .step h3{
-      margin:2px 0 6px;
-      font-size:17px;
-      color:#162b42;
-    }
-    .step p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.45;
-      font-size:14px;
-    }
-    .priority{
-      margin-top:16px;
-      border-radius:var(--radius);
-      padding:17px;
-      background:linear-gradient(135deg,#fff7d6,#fff0ad);
-      border:1px solid #f1d36d;
-      box-shadow:var(--shadow);
-    }
-    .priority strong{
-      display:block;
-      color:#6f5200;
-      font-size:17px;
-      margin-bottom:5px;
-    }
-    .priority p{margin:0;color:#705f25;line-height:1.45;font-size:14px}
-    .cards{
-      display:grid;
-      gap:12px;
-      grid-template-columns:1fr;
-    }
-    .card{
-      background:white;
-      border-radius:var(--radius);
-      padding:16px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(11,47,86,.06);
-    }
-    .card h3{
-      margin:0 0 7px;
-      color:var(--navy);
-      font-size:17px;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.45;
-    }
-    .tag{
-      display:inline-block;
-      margin-bottom:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:var(--blue);
-      color:var(--navy);
-      font-size:12px;
-      font-weight:800;
-    }
-    .danger{
-      background:var(--red);
-      border:1px solid #efb9b9;
-    }
-    .danger h3{color:#a61b1b}
-    .danger ul{
-      margin:9px 0 0;
-      padding-left:20px;
-      color:#6f2b2b;
-      line-height:1.5;
-      font-size:14px;
-    }
-    .nav{
-      position:fixed;
-      left:50%;
-      transform:translateX(-50%);
-      bottom:0;
-      z-index:10;
-      width:min(760px,100%);
-      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-      background:rgba(255,255,255,.94);
-      backdrop-filter:blur(16px);
-      border-top:1px solid #dbe3ec;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:8px;
-    }
-    .nav a{
-      min-height:58px;
-      border-radius:16px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:3px;
-      color:#4a5a6a;
-      font-size:12px;
-      font-weight:800;
-    }
-    .nav a:first-child{
-      background:var(--navy);
-      color:white;
-    }
-    .ico{font-size:21px}
-    .small{
-      margin-top:18px;
-      text-align:center;
-      color:#7d8996;
-      font-size:12px;
-      line-height:1.4;
-    }
-    @media(min-width:640px){
-      main{padding:22px}
-      .steps{grid-template-columns:1fr 1fr}
-      .cards{grid-template-columns:repeat(3,1fr)}
-      .priority{grid-column:1/-1}
-    }
-    @media print{
-      body,.app{background:white}
-      .nav{display:none}
-      .app{max-width:none;padding:0}
-      .hero{border-radius:0;box-shadow:none}
-      .step,.card,.priority{box-shadow:none;break-inside:avoid}
-      main{padding:14px}
+    .resume strong{color:var(--navy)}
+    .footer{margin:20px 8px 0;text-align:center;color:#7b8794;font-size:12px}
+    @media(max-width:380px){.grid{grid-template-columns:1fr}}
+    @media(min-width:700px){
+      main{padding:28px}.grid{grid-template-columns:repeat(4,1fr)}
+      .tile{min-height:180px}
     }
   </style>
 </head>
 <body>
-  <div class="app">
-    <header class="hero">
-      <div class="eyebrow">🛏️ Nouvel arrivant · Brancardage</div>
-      <h1>Mes premiers réflexes</h1>
-      <p>Une aide simple à garder sous la main pendant les premières missions.</p>
-      <div class="hero-note">
-        <span>ℹ️</span>
-        <span>Ce guide ne remplace pas les consignes des équipes. En cas de doute, je m’arrête et je demande.</span>
+<div class="app">
+  <header class="hero">
+    <div class="kicker">Brancardage</div>
+    <h1>Bienvenue</h1>
+    <p>Vos repères pour commencer sereinement et retrouver l’essentiel au bon moment.</p>
+  </header>
+
+  <main>
+    <a class="start" href="commencer.html">
+      <div class="start-icon">👋</div>
+      <div>
+        <h2>Je commence</h2>
+        <p>Un parcours simple pour les premiers jours, étape après étape.</p>
       </div>
-    </header>
+      <div class="arrow">›</div>
+    </a>
 
-    <main>
-      <h2 class="section-title" id="mission">À chaque mission</h2>
-      <p class="intro">Je suis toujours le même ordre. L’objectif est d’éviter les oublis, pas d’aller vite.</p>
+    <h2 class="label">Accès rapides</h2>
 
-      <section class="steps">
-        <article class="step">
-          <div class="num">1</div>
-          <div>
-            <h3>Je lis toute la mission</h3>
-            <p>Lieu de départ, destination, type de transport et informations particulières.</p>
-          </div>
-        </article>
+    <section class="grid">
+      <a class="tile hospitals" href="hopitaux.html">
+        <div class="icon">🏥</div>
+        <div><h3>Hôpitaux</h3><p>Se repérer facilement.</p></div>
+      </a>
 
-        <article class="step">
-          <div class="num">2</div>
-          <div>
-            <h3>Je vérifie l’identité</h3>
-            <p>Nom, prénom et date de naissance. Je contrôle la concordance avec le bracelet et la mission.</p>
-          </div>
-        </article>
+      <a class="tile contacts" href="contacts.html">
+        <div class="icon">📞</div>
+        <div><h3>Contacts</h3><p>Trouver qui appeler.</p></div>
+      </a>
 
-        <article class="step">
-          <div class="num">3</div>
-          <div>
-            <h3>Je vérifie la destination</h3>
-            <p>Bon hôpital, bon service, bon examen. Si je ne connais pas le trajet, je demande avant de partir.</p>
-          </div>
-        </article>
+      <a class="tile reflexes" href="reflexes.html">
+        <div class="icon">✅</div>
+        <div><h3>Réflexes</h3><p>Vérifier l’essentiel.</p></div>
+      </a>
 
-        <article class="step">
-          <div class="num">4</div>
-          <div>
-            <h3>Je prends ce qui accompagne le patient</h3>
-            <p>Dossier, étiquettes, documents et consignes nécessaires au transport.</p>
-          </div>
-        </article>
+      <a class="tile help" href="aide.html">
+        <div class="icon">❓</div>
+        <div><h3>Un doute</h3><p>Savoir quoi faire.</p></div>
+      </a>
+    </section>
 
-        <article class="step">
-          <div class="num">5</div>
-          <div>
-            <h3>J’annonce le départ</h3>
-            <p>Je préviens le service que le patient part et je confirme sa destination.</p>
-          </div>
-        </article>
+    <div class="resume">
+      <strong>Déjà commencé ?</strong> Votre parcours reprend là où vous l’avez laissé.
+    </div>
 
-        <article class="step">
-          <div class="num">6</div>
-          <div>
-            <h3>Je sécurise le transport</h3>
-            <p>Matériel adapté, freins, barrières, repose-pieds ou ceinture. Je reste attentif au patient.</p>
-          </div>
-        </article>
-
-        <article class="step">
-          <div class="num">7</div>
-          <div>
-            <h3>J’annonce l’arrivée</h3>
-            <p>Je présente le patient, je le confie à un professionnel et je transmets les informations utiles.</p>
-          </div>
-        </article>
-
-        <article class="step">
-          <div class="num">8</div>
-          <div>
-            <h3>Je clôture à la fin réelle</h3>
-            <p>La mission n’est terminée qu’une fois le patient arrivé, annoncé et confié.</p>
-          </div>
-        </article>
-      </section>
-
-      <section class="priority">
-        <strong>Le réflexe prioritaire</strong>
-        <p>En cas de doute sur l’identité, la destination ou une consigne : je ne pars pas et je fais vérifier.</p>
-      </section>
-
-      <h2 class="section-title" id="reperes">Mes repères</h2>
-      <p class="intro">Les destinations détaillées seront ajoutées progressivement avec les équipes.</p>
-
-      <section class="cards">
-        <article class="card">
-          <span class="tag">HFME</span>
-          <h3>Mère · Enfant</h3>
-          <p>Je vérifie précisément le niveau et l’accès indiqués. Si le trajet n’est pas connu, je demande avant le départ.</p>
-        </article>
-
-        <article class="card">
-          <span class="tag">NEURO</span>
-          <h3>Neurologie</h3>
-          <p>Je m’assure du service exact et du bon accès. Je ne me fie pas uniquement à mes souvenirs.</p>
-        </article>
-
-        <article class="card">
-          <span class="tag">CARDIO</span>
-          <h3>Cardiologie</h3>
-          <p>Je confirme l’étage et la destination indiquée sur la mission avant de déplacer le patient.</p>
-        </article>
-      </section>
-
-      <h2 class="section-title" id="doute">En cas de doute</h2>
-      <section class="card danger">
-        <h3>Je m’arrête avant l’erreur</h3>
-        <ul>
-          <li>Je ne devine pas.</li>
-          <li>Je sécurise le patient.</li>
-          <li>Je vérifie l’identité et la destination.</li>
-          <li>Je contacte un collègue, le chef d’équipe ou le service.</li>
-          <li>Je signale toute anomalie.</li>
-        </ul>
-      </section>
-
-      <p class="small">Version de travail 1 · Contenu à compléter avec les particularités validées du service.</p>
-    </main>
-
-    <nav class="nav" aria-label="Navigation principale">
-      <a href="#mission"><span class="ico">✅</span><span>Mission</span></a>
-      <a href="#reperes"><span class="ico">🧭</span><span>Repères</span></a>
-      <a href="#doute"><span class="ico">❓</span><span>Un doute</span></a>
-    </nav>
-  </div>
+    <p class="footer">Guide d’accueil · Brancardage</p>
+  </main>
+</div>
 </body>
 </html>
