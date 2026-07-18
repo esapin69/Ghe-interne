@@ -1,6 +1,0 @@
-const CONFIG = {
-  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyT31o3uSvwy-WrVZ4QGRQ8u9js6tpC4a1bzUy3VHl_ccySpAnFnjjPzzj3Vcrco6X_/exec"
-};
-
-// Conserve le reste de ton fichier app.js actuel sous ce bloc.
-// Remplace uniquement l'ancien bloc CONFIG par celui-ci.
