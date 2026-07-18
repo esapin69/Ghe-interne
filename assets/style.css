@@ -1,21 +1,85 @@
 
-
-/* Corrections finales mobiles et pages enrichies */
+:root{
+  --navy:#0b2f56;--navy2:#174a7c;--blue:#eaf4ff;--green:#eaf7ef;
+  --orange:#fff3e7;--purple:#f2ecff;--rose:#fff0f3;--yellow:#fff7d6;
+  --bg:#f4f7fb;--card:#fff;--text:#182230;--muted:#667085;--line:#dbe4ee;
+  --shadow:0 14px 34px rgba(11,47,86,.11);--radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+.app{max-width:760px;min-height:100vh;margin:auto;padding-bottom:110px}
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(145deg,var(--navy),var(--navy2));padding:calc(28px + env(safe-area-inset-top)) 20px 30px;border-radius:0 0 32px 32px;box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;right:-90px;top:-100px;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,.08)}
+.kicker{font-size:13px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#dce9f7}
+h1{margin:12px 0 8px;font-size:clamp(38px,10vw,56px);line-height:1.02;letter-spacing:-.035em}
+.hero p{margin:0;color:#e6eef8;font-size:16px;line-height:1.45;max-width:620px}
+main{padding:20px 16px 30px}
+.section-title{margin:23px 4px 12px;color:var(--navy);font-size:21px}
+.section-sub{margin:-4px 4px 14px;color:var(--muted);font-size:14px;line-height:1.45}
+.grid{display:grid;gap:13px}.grid.two{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid rgba(11,47,86,.07);border-radius:var(--radius);padding:17px;box-shadow:var(--shadow)}
+.card h2,.card h3{margin:0 0 6px;color:var(--navy)}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.48}
+.home-step{display:grid;grid-template-columns:62px 1fr 24px;gap:14px;align-items:center;min-height:142px}
+.home-step+.home-step{margin-top:13px}
+.step-icon{width:62px;height:62px;border-radius:19px;display:grid;place-items:center;font-size:29px}
+.home-step:nth-of-type(1) .step-icon{background:var(--blue)}
+.home-step:nth-of-type(2) .step-icon{background:var(--orange)}
+.home-step:nth-of-type(3) .step-icon{background:var(--green)}
+.arrow{font-size:28px;color:#8fa1b4}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900;background:#eef3f8;color:var(--navy);margin-bottom:8px}
+.note{border-radius:18px;padding:14px 15px;font-size:14px;line-height:1.48}
+.note.blue{background:var(--blue);border:1px solid #bdd7ef;color:var(--navy)}
+.note.yellow{background:var(--yellow);border:1px solid #efd36e;color:#6d5700}
+.note.green{background:var(--green);border:1px solid #b8dfc6;color:#205f39}
+.note.red{background:#fff0f0;border:1px solid #efc0c0;color:#8b1e1e}
+.btn{border:0;border-radius:16px;min-height:52px;padding:0 16px;font-weight:900;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.btn.primary{background:var(--navy);color:#fff}.btn.secondary{background:#edf3f8;color:var(--navy)}.btn.call{background:#e9f7ef;color:#176b39}
+.btn+.btn{margin-top:10px}
+.timeline{display:grid;gap:12px}
+.timeline-item{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start}
+.timeline-num{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:var(--blue);color:var(--navy);font-weight:900}
+.timeline-item h3{margin:1px 0 4px;color:var(--navy);font-size:17px}
+.timeline-item p{margin:0;color:var(--muted);font-size:14px;line-height:1.48}
+.checklist{display:grid;gap:11px}
+.check{display:grid;grid-template-columns:38px 1fr;gap:11px;align-items:start}
+.check i{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:var(--green);font-style:normal}
+.check h3{margin:0 0 4px;color:var(--navy);font-size:16px}
+.check p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.phone-flow{display:grid;gap:12px}
+.phone-step{padding:15px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.phone-step strong{display:block;color:var(--navy);margin-bottom:5px}
+.phone-step p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.contact-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.contact-row+.contact-row{margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+.small{font-size:12px;color:var(--muted)}
+.bottom-nav{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(760px,100%);z-index:20;padding:8px 9px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.bottom-nav a{min-height:60px;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#5b6876;font-size:10px;font-weight:900}
+.bottom-nav a.active{background:#eaf4ff;color:var(--navy)}
+.bottom-nav a.home-center{background:var(--navy);color:#fff;transform:translateY(-10px);box-shadow:0 10px 24px rgba(11,47,86,.25);min-height:68px;border-radius:20px}
+.bottom-nav .ico{font-size:21px}
+.bottom-nav .home-center .ico{font-size:26px}
+.form-hub{display:grid;gap:13px}
+.form-card{display:grid;grid-template-columns:56px 1fr 24px;gap:13px;align-items:center}
+.form-icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:27px;background:var(--purple)}
 .hospital-list{display:grid;gap:14px;width:100%;max-width:100%;overflow:hidden}
 .hospital-item{width:100%;max-width:100%;background:#fff;border:1px solid rgba(11,47,86,.08);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
 .hospital-item summary{list-style:none;cursor:pointer;position:relative;width:100%;max-width:100%;overflow:hidden}
 .hospital-item summary::-webkit-details-marker{display:none}
 .hospital-photo{display:block;width:100%;max-width:100%;height:180px;object-fit:cover}
 .hospital-overlay{position:absolute;inset:auto 0 0 0;padding:42px 16px 15px;color:#fff;background:linear-gradient(transparent,rgba(6,31,57,.92))}
-.hospital-overlay strong{display:block;font-size:20px;line-height:1.15}
+.hospital-overlay strong{display:block;font-size:20px}
 .hospital-overlay span{display:block;margin-top:4px;font-size:13px;color:#e4eef8}
-.hospital-chevron{position:absolute;right:15px;bottom:17px;width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#0b2f56;font-size:24px;font-weight:900;transition:transform .2s ease}
+.hospital-chevron{position:absolute;right:15px;bottom:17px;width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#0b2f56;font-size:24px;font-weight:900}
 .hospital-item[open] .hospital-chevron{transform:rotate(90deg)}
 .hospital-content{padding:17px;border-top:1px solid var(--line)}
-.detail-card{margin-top:12px;padding:14px;border-radius:17px;background:#f7f9fc;border:1px solid var(--line)}
-.detail-card h3{margin:0 0 6px;color:var(--navy);font-size:16px}
-.warning-list{display:grid;gap:11px}
-.warning-item{display:grid;grid-template-columns:42px 1fr;gap:11px;align-items:start}
-.warning-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:#fff3e7}
-.compact-actions{display:grid;gap:10px;margin-top:14px}
-@media(max-width:390px){.hospital-photo{height:155px}.hospital-overlay strong{font-size:18px}}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:8px 11px;border-radius:999px;background:#eef3f8;color:var(--navy);font-size:12px;font-weight:850}
+.field{margin-top:16px}label{display:block;font-weight:900;color:var(--navy);margin-bottom:7px}
+textarea{width:100%;min-height:110px;border:1px solid #cfd9e3;border-radius:15px;padding:13px 14px;background:#fff;color:var(--text);resize:vertical}
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.choice{border:1px solid #d6e0ea;border-radius:15px;padding:12px;background:#fff;text-align:center;font-weight:850;color:#405162;cursor:pointer}.choice.selected{background:var(--navy);color:#fff;border-color:var(--navy)}
+.range-row{display:flex;align-items:center;gap:12px}.range-row input{flex:1}.range-value{min-width:58px;text-align:center;font-weight:900;color:var(--navy)}
+.hidden{display:none!important}
+@media(max-width:420px){.grid.two,.choice-grid{grid-template-columns:1fr}.hospital-photo{height:155px}.bottom-nav a{font-size:9px}.bottom-nav{gap:3px}}
