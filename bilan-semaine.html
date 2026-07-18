@@ -1,26 +1,30 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Ma première semaine</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><header class="hero"><div class="kicker">Faire le point</div><h1>Ma première semaine</h1><p>Ce point rapide aide à identifier ce qui est acquis et ce qu’il serait utile de revoir.</p></header><main>
-    <section id="formStep">
-      <div class="card">
-        <div class="field"><label>Comment cela s’est-il passé ?</label><div class="choice-grid"><button class="choice" data-value="Très bien">Très bien</button><button class="choice" data-value="Bien">Bien</button><button class="choice" data-value="Difficile">Difficile</button><button class="choice" data-value="Très difficile">Très difficile</button></div><input type="hidden" name="Bilan général" data-form></div>
-        <div class="field"><label>Vous êtes-vous senti suffisamment accompagné ?</label><div class="choice-grid"><button class="choice" data-value="Oui">Oui</button><button class="choice" data-value="Partiellement">Partiellement</button><button class="choice" data-value="Non">Non</button></div><input type="hidden" name="Accompagnement" data-form></div>
-        <div class="field"><label>À combien estimez-vous connaître les lieux ?</label><div class="range-row"><input id="lieux" type="range" min="0" max="100" value="50" name="Connaissance des lieux" data-form><div class="range-value" data-range="lieux"></div></div></div>
-        <div class="field"><label>À combien estimez-vous pouvoir gérer seul une mission simple ?</label><div class="range-row"><input id="autonomie" type="range" min="0" max="100" value="50" name="Autonomie ressentie" data-form><div class="range-value" data-range="autonomie"></div></div></div>
-        <div class="field"><label>Un point positif ressenti cette semaine</label><textarea name="Point positif" data-form placeholder="Ce qui vous a aidé, rassuré ou plu."></textarea></div>
-        <div class="field"><label>Un point plus difficile cette semaine</label><textarea name="Point difficile" data-form placeholder="Ce qui vous a semblé moins clair, moins pratique ou plus difficile."></textarea></div>
-        <div class="field"><label>Quelque chose à revoir ou à améliorer ?</label><textarea name="À revoir" data-form placeholder="Facultatif"></textarea></div>
-        <button class="btn primary" style="width:100%;margin-top:16px" onclick="reviewForm()">Relire mes réponses</button>
-      </div>
-    </section>
-    <section id="reviewStep" class="hidden">
-      <h2 class="section-title">Vérifiez avant l’envoi</h2>
-      <div id="reviewContent"></div>
-      <button class="btn secondary" style="width:100%" onclick="nextStep('reviewStep','formStep')">Modifier</button>
-      <button class="btn primary" style="width:100%;margin-top:10px" onclick="alert('Envoi à connecter au mail du chef')">Valider et transmettre</button>
-    </section>
-    </main>
-    <nav class="bottom-nav">
-      <a href="index.html" class=""><span class="ico">🏠</span><span>Accueil</span></a>
-      <a href="commencer.html" class="active"><span class="ico">👋</span><span>Je commence</span></a>
-      <a href="hopitaux.html" class=""><span class="ico">🏥</span><span>Hôpitaux</span></a>
-      <a href="contacts.html" class=""><span class="ico">📞</span><span>Contacts</span></a>
-    </nav></div><script src="assets/app.js"></script></body></html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Point de fin de semaine</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><header class="hero"><div class="kicker">Étape 6 sur 6</div><h1>Point de fin de semaine</h1><p>Avant de poursuivre en autonomie, faites le point sur votre première semaine.</p></header><main>
+<section id="formStep">
+  <div class="card mandatory-card">
+    <h2>Cette étape fait partie de votre parcours</h2>
+    <p>Vos réponses permettent d’identifier les repères acquis et les éléments à revoir avant la suite.</p>
+  </div>
+  <div class="card">
+    <div class="field"><label>Comment cela s’est-il passé ?</label><div class="choice-grid"><button class="choice" data-value="Très bien">Très bien</button><button class="choice" data-value="Bien">Bien</button><button class="choice" data-value="Difficile">Difficile</button><button class="choice" data-value="Très difficile">Très difficile</button></div><input type="hidden" name="Bilan général" data-form></div>
+    <div class="field"><label>Vous êtes-vous senti suffisamment accompagné ?</label><div class="choice-grid"><button class="choice" data-value="Oui">Oui</button><button class="choice" data-value="Partiellement">Partiellement</button><button class="choice" data-value="Non">Non</button></div><input type="hidden" name="Accompagnement" data-form></div>
+    <div class="field"><label>À combien estimez-vous connaître les lieux ?</label><div class="range-row"><input id="lieux" type="range" min="0" max="100" value="50" name="Connaissance des lieux" data-form><div class="range-value" data-range="lieux"></div></div></div>
+    <div class="field"><label>À combien estimez-vous pouvoir gérer seul une mission simple ?</label><div class="range-row"><input id="autonomie" type="range" min="0" max="100" value="50" name="Autonomie ressentie" data-form><div class="range-value" data-range="autonomie"></div></div></div>
+    <div class="field"><label>Un point positif ressenti cette semaine</label><textarea name="Point positif" data-form placeholder="Ce qui vous a aidé, rassuré ou plu."></textarea></div>
+    <div class="field"><label>Un point plus difficile cette semaine</label><textarea name="Point difficile" data-form placeholder="Ce qui vous a semblé moins clair, moins pratique ou plus difficile."></textarea></div>
+    <div class="field"><label>Quel élément serait utile à revoir ?</label><textarea name="Élément à revoir" data-form></textarea></div>
+    <button class="btn primary" style="width:100%;margin-top:16px" onclick="reviewForm()">Relire et terminer mon étape</button>
+  </div>
+</section>
+<section id="reviewStep" class="hidden">
+  <h2 class="section-title">Vérifiez avant la validation</h2>
+  <div id="reviewContent"></div>
+  <button class="btn secondary" style="width:100%;margin-top:13px" onclick="backToForm()">Modifier mes réponses</button>
+  <button class="btn primary" style="width:100%;margin-top:10px" onclick="markDone('bilan_semaine')">Valider et transmettre</button>
+</section>
+</main>
+<nav class="bottom-nav">
+<a href="index.html" class=""><span class="ico">🏠</span><span>Accueil</span></a>
+<a href="commencer.html" class="active"><span class="ico">🧭</span><span>Parcours</span></a>
+<a href="hopitaux.html"><span class="ico">🏥</span><span>Hôpitaux</span></a>
+<a href="contacts.html"><span class="ico">📞</span><span>Contacts</span></a>
+</nav></div><script src="assets/app.js"></script></body></html>

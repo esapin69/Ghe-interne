@@ -1,19 +1,27 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Bienvenue</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><header class="hero"><div class="kicker">Brancardage</div><h1>Bienvenue</h1><p>Vos repères pour commencer sereinement et retrouver l’essentiel au bon moment.</p></header><main>
-<a class="card action-card" href="commencer.html" onclick="localStorage.setItem('ghe_start_progress','started')">
-  <div class="icon">👋</div><div><h2>Je commence</h2><p>Un parcours simple pour les premiers jours, étape après étape.</p></div><div class="arrow">›</div>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Bienvenue</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><header class="hero"><div class="kicker">Brancardage</div><h1>Bienvenue</h1><p>Vos repères pour commencer sereinement et suivre votre parcours d’arrivée.</p></header><main>
+<div class="card mandatory-card">
+  <div class="progress-wrap"><div class="progress"><span style="width:50%"></span></div><div class="progress-text">3 étapes sur 6 terminées</div></div>
+  <h2>Votre étape de première journée reste à terminer</h2>
+  <p>Ce point fait partie de votre parcours d’arrivée et permet de vérifier que vous disposez des repères nécessaires pour poursuivre.</p>
+  <a class="btn primary" href="bilan-journee.html">Terminer mon étape</a>
+</div>
+
+<h2 class="section-title">Mon parcours</h2>
+<a class="card action" href="commencer.html">
+  <div class="icon">🧭</div><div><h2>Mon parcours d’arrivée</h2><p>Voir les étapes terminées, en cours et à venir.</p></div><div class="arrow">›</div>
 </a>
-<h2 class="section-title" style="margin-top:22px">Accès rapides</h2>
-<section class="grid two">
+
+<h2 class="section-title">Accès rapides</h2>
+<div class="grid">
   <a class="card" href="hopitaux.html"><div class="icon" style="background:var(--green)">🏥</div><h3 style="margin-top:14px">Hôpitaux</h3><p>Se repérer facilement.</p></a>
   <a class="card" href="contacts.html"><div class="icon" style="background:var(--orange)">📞</div><h3 style="margin-top:14px">Contacts</h3><p>Trouver qui appeler.</p></a>
   <a class="card" href="reflexes.html"><div class="icon" style="background:var(--purple)">✅</div><h3 style="margin-top:14px">Réflexes</h3><p>Vérifier l’essentiel.</p></a>
-  <a class="card" href="aide.html"><div class="icon" style="background:var(--blue)">❓</div><h3 style="margin-top:14px">Un doute</h3><p>Savoir quoi faire.</p></a>
-</section>
-<div class="note blue" style="margin-top:17px"><strong>Déjà commencé ?</strong><br>Votre parcours reprend là où vous l’avez laissé.</div>
+  <a class="card" href="aide.html"><div class="icon">❓</div><h3 style="margin-top:14px">Un doute</h3><p>Savoir quoi faire.</p></a>
+</div>
 </main>
-    <nav class="bottom-nav">
-      <a href="index.html" class="active"><span class="ico">🏠</span><span>Accueil</span></a>
-      <a href="commencer.html" class=""><span class="ico">👋</span><span>Je commence</span></a>
-      <a href="hopitaux.html" class=""><span class="ico">🏥</span><span>Hôpitaux</span></a>
-      <a href="contacts.html" class=""><span class="ico">📞</span><span>Contacts</span></a>
-    </nav></div><script src="assets/app.js"></script></body></html>
+<nav class="bottom-nav">
+<a href="index.html" class="active"><span class="ico">🏠</span><span>Accueil</span></a>
+<a href="commencer.html" class=""><span class="ico">🧭</span><span>Parcours</span></a>
+<a href="hopitaux.html"><span class="ico">🏥</span><span>Hôpitaux</span></a>
+<a href="contacts.html"><span class="ico">📞</span><span>Contacts</span></a>
+</nav></div><script src="assets/app.js"></script></body></html>
