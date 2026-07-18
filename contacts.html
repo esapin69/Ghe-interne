@@ -6,33 +6,609 @@
 <meta name="theme-color" content="#0b2f56">
 <title>Contacts</title>
 <link rel="stylesheet" href="assets/style.css">
+<style>
+.search-box{position:sticky;top:8px;z-index:5;background:#fff;border:1px solid #dbe4ee;border-radius:18px;padding:12px 14px;box-shadow:0 8px 20px rgba(11,47,86,.10);width:100%;font-size:16px}
+.contact-count{margin:12px 4px;color:#667085;font-size:13px}
+.contact-list{display:grid;gap:11px}
+.contact-card{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid rgba(11,47,86,.08);border-radius:20px;padding:14px;box-shadow:0 10px 24px rgba(11,47,86,.08)}
+.contact-main{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;min-width:0}
+.avatar{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#eaf4ff;color:#0b2f56;font-weight:900;font-size:20px}
+.contact-card h2{margin:0;color:#0b2f56;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{margin-top:4px;color:#667085;font-size:13px}
+.call-btn{min-height:44px;padding:0 13px;border-radius:14px;background:#e9f7ef;color:#176b39;font-weight:900;display:flex;align-items:center;justify-content:center}
+.empty{display:none;text-align:center;padding:25px;color:#667085}
+@media(max-width:380px){.contact-card{grid-template-columns:1fr}.call-btn{width:100%}}
+</style>
 </head>
 <body>
 <div class="app">
 <header class="hero">
-<div class="kicker">Accès rapide</div>
-<h1>Contacts</h1>
-<p>Retrouvez immédiatement le contact utile.</p>
+  <div class="kicker">Annuaire</div>
+  <h1>Contacts</h1>
+  <p>Recherchez un collègue par son prénom, son nom ou son numéro GHE.</p>
 </header>
 <main>
-<div class="card">
-  <div class="contact-row">
-    <div><h3>Régulation</h3><p>Accès, mission ou difficulté immédiate.</p><div class="small">04 26 73 93 52</div></div>
-    <a class="btn call" href="tel:0426739352">Appeler</a>
-  </div>
-</div>
-<div class="note blue" style="margin-top:14px">
-  Pour toute difficulté, ne restez pas bloqué : contactez la régulation ou une personne présente dans l’équipe.
-</div>
+  <input id="search" class="search-box" type="search" placeholder="Rechercher un contact…" autocomplete="off">
+  <div id="count" class="contact-count">55 contacts affichés</div>
+  <section id="list" class="contact-list">
+    
+    <article class="contact-card" data-search="serge galea ghe 01 0612384328">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Serge Galea</h2>
+          <div class="meta">GHE 01 · 06 12 38 43 28</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0612384328">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="jamila adouani ghe 02 0616874288">
+      <div class="contact-main">
+        <div class="avatar">J</div>
+        <div>
+          <h2>Jamila Adouani</h2>
+          <div class="meta">GHE 02 · 06 16 87 42 88</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0616874288">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="larby berhoune ghe 03 0612323486">
+      <div class="contact-main">
+        <div class="avatar">L</div>
+        <div>
+          <h2>Larby Berhoune</h2>
+          <div class="meta">GHE 03 · 06 12 32 34 86</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0612323486">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="geoffroy bottero ghe 04 0609775413">
+      <div class="contact-main">
+        <div class="avatar">G</div>
+        <div>
+          <h2>Geoffroy Bottero</h2>
+          <div class="meta">GHE 04 · 06 09 77 54 13</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609775413">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="mickael tekin ghe 05 0622770622">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Mickael Tekin</h2>
+          <div class="meta">GHE 05 · 06 22 77 06 22</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0622770622">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="salami madi moussa ghe 06 0609777243">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Salami Madi Moussa</h2>
+          <div class="meta">GHE 06 · 06 09 77 72 43</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609777243">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="florent boisset ghe 07 0634093697">
+      <div class="contact-main">
+        <div class="avatar">F</div>
+        <div>
+          <h2>Florent Boisset</h2>
+          <div class="meta">GHE 07 · 06 34 09 36 97</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0634093697">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="mehdi abdelkebir ghe 08 0614437506">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Mehdi Abdelkebir</h2>
+          <div class="meta">GHE 08 · 06 14 43 75 06</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0614437506">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="gilbert alimelie ghe 09 0623659353">
+      <div class="contact-main">
+        <div class="avatar">G</div>
+        <div>
+          <h2>Gilbert Alimelie</h2>
+          <div class="meta">GHE 09 · 06 23 65 93 53</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0623659353">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="margot iafrate ghe 10 0624096508">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Margot Iafrate</h2>
+          <div class="meta">GHE 10 · 06 24 09 65 08</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0624096508">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="sinan kara ghe 11 0609776969">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Sinan Kara</h2>
+          <div class="meta">GHE 11 · 06 09 77 69 69</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609776969">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="thomas montagnon ghe 13 0609773305">
+      <div class="contact-main">
+        <div class="avatar">T</div>
+        <div>
+          <h2>Thomas Montagnon</h2>
+          <div class="meta">GHE 13 · 06 09 77 33 05</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609773305">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="fahim khaldi ghe 14 0776232084">
+      <div class="contact-main">
+        <div class="avatar">F</div>
+        <div>
+          <h2>Fahim Khaldi</h2>
+          <div class="meta">GHE 14 · 07 76 23 20 84</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0776232084">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="anthony bahloul ghe 15 0778195289">
+      <div class="contact-main">
+        <div class="avatar">A</div>
+        <div>
+          <h2>Anthony Bahloul</h2>
+          <div class="meta">GHE 15 · 07 78 19 52 89</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0778195289">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="ludovic jiffard ghe 16 0610108073">
+      <div class="contact-main">
+        <div class="avatar">L</div>
+        <div>
+          <h2>Ludovic Jiffard</h2>
+          <div class="meta">GHE 16 · 06 10 10 80 73</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0610108073">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="yacine bendahmane ghe 17 0621109458">
+      <div class="contact-main">
+        <div class="avatar">Y</div>
+        <div>
+          <h2>Yacine Bendahmane</h2>
+          <div class="meta">GHE 17 · 06 21 10 94 58</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0621109458">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="antoine krivopissko ghe 18 0612536669">
+      <div class="contact-main">
+        <div class="avatar">A</div>
+        <div>
+          <h2>Antoine Krivopissko</h2>
+          <div class="meta">GHE 18 · 06 12 53 66 69</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0612536669">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="mathieu triboulet ghe 19 0777694742">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Mathieu Triboulet</h2>
+          <div class="meta">GHE 19 · 07 77 69 47 42</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0777694742">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="norra ezzine ghe 20 0626888750">
+      <div class="contact-main">
+        <div class="avatar">N</div>
+        <div>
+          <h2>Norra Ezzine</h2>
+          <div class="meta">GHE 20 · 06 26 88 87 50</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0626888750">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="nasser meghari ghe 21 0634093110">
+      <div class="contact-main">
+        <div class="avatar">N</div>
+        <div>
+          <h2>Nasser Meghari</h2>
+          <div class="meta">GHE 21 · 06 34 09 31 10</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0634093110">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="nadia bouhami ghe 22 0603929410">
+      <div class="contact-main">
+        <div class="avatar">N</div>
+        <div>
+          <h2>Nadia Bouhami</h2>
+          <div class="meta">GHE 22 · 06 03 92 94 10</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0603929410">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="eddy sapin ghe 24 0609779806">
+      <div class="contact-main">
+        <div class="avatar">E</div>
+        <div>
+          <h2>Eddy Sapin</h2>
+          <div class="meta">GHE 24 · 06 09 77 98 06</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609779806">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="fatima boulenouar ghe 25 0616294555">
+      <div class="contact-main">
+        <div class="avatar">F</div>
+        <div>
+          <h2>Fatima Boulenouar</h2>
+          <div class="meta">GHE 25 · 06 16 29 45 55</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0616294555">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="kevin fumele ghe 26 0611661648">
+      <div class="contact-main">
+        <div class="avatar">K</div>
+        <div>
+          <h2>Kevin Fumele</h2>
+          <div class="meta">GHE 26 · 06 11 66 16 48</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0611661648">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="mounir ould boukhitine ghe 27 0603920217">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Mounir Ould Boukhitine</h2>
+          <div class="meta">GHE 27 · 06 03 92 02 17</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0603920217">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="roxana flageollet ghe 28 0622119851">
+      <div class="contact-main">
+        <div class="avatar">R</div>
+        <div>
+          <h2>Roxana Flageollet</h2>
+          <div class="meta">GHE 28 · 06 22 11 98 51</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0622119851">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="pascal chaussiere ghe 29 0628547358">
+      <div class="contact-main">
+        <div class="avatar">P</div>
+        <div>
+          <h2>Pascal Chaussiere</h2>
+          <div class="meta">GHE 29 · 06 28 54 73 58</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0628547358">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="lamia mderreg ghe 30 0612841004">
+      <div class="contact-main">
+        <div class="avatar">L</div>
+        <div>
+          <h2>Lamia Mderreg</h2>
+          <div class="meta">GHE 30 · 06 12 84 10 04</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0612841004">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="karim matoug ghe 31 0609279033">
+      <div class="contact-main">
+        <div class="avatar">K</div>
+        <div>
+          <h2>Karim Matoug</h2>
+          <div class="meta">GHE 31 · 06 09 27 90 33</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609279033">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="benjamin faure ghe 32 0616714738">
+      <div class="contact-main">
+        <div class="avatar">B</div>
+        <div>
+          <h2>Benjamin Faure</h2>
+          <div class="meta">GHE 32 · 06 16 71 47 38</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0616714738">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="lynda sahli ghe 33 0616879960">
+      <div class="contact-main">
+        <div class="avatar">L</div>
+        <div>
+          <h2>Lynda Sahli</h2>
+          <div class="meta">GHE 33 · 06 16 87 99 60</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0616879960">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="souhela mokeddem ghe 34 0611667172">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Souhela Mokeddem</h2>
+          <div class="meta">GHE 34 · 06 11 66 71 72</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0611667172">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="wafa dhrioua ghe 35 0778055235">
+      <div class="contact-main">
+        <div class="avatar">W</div>
+        <div>
+          <h2>Wafa Dhrioua</h2>
+          <div class="meta">GHE 35 · 07 78 05 52 35</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0778055235">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="islem boussena ghe 36 0609770337">
+      <div class="contact-main">
+        <div class="avatar">I</div>
+        <div>
+          <h2>Islem Boussena</h2>
+          <div class="meta">GHE 36 · 06 09 77 03 37</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609770337">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="yael ridde ghe 37 0603929531">
+      <div class="contact-main">
+        <div class="avatar">Y</div>
+        <div>
+          <h2>Yael Ridde</h2>
+          <div class="meta">GHE 37 · 06 03 92 95 31</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0603929531">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="marion chatillon ghe 39 0616528531">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Marion Chatillon</h2>
+          <div class="meta">GHE 39 · 06 16 52 85 31</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0616528531">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="atika benakka ghe 41 0609770944">
+      <div class="contact-main">
+        <div class="avatar">A</div>
+        <div>
+          <h2>Atika Benakka</h2>
+          <div class="meta">GHE 41 · 06 09 77 09 44</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609770944">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="remy monneret ghe 42 0625017954">
+      <div class="contact-main">
+        <div class="avatar">R</div>
+        <div>
+          <h2>Remy Monneret</h2>
+          <div class="meta">GHE 42 · 06 25 01 79 54</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0625017954">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="wahel hazmi ghe 43 0626368472">
+      <div class="contact-main">
+        <div class="avatar">W</div>
+        <div>
+          <h2>Wahel Hazmi</h2>
+          <div class="meta">GHE 43 · 06 26 36 84 72</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0626368472">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="sabrina djennas ghe 44 0624649811">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Sabrina Djennas</h2>
+          <div class="meta">GHE 44 · 06 24 64 98 11</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0624649811">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="sebastien chaverot ghe 45 0610371258">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Sebastien Chaverot</h2>
+          <div class="meta">GHE 45 · 06 10 37 12 58</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0610371258">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="mehdi baibou ghe 47 0625019753">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Mehdi Baibou</h2>
+          <div class="meta">GHE 47 · 06 25 01 97 53</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0625019753">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="christophe coussat ghe 51 0612323486">
+      <div class="contact-main">
+        <div class="avatar">C</div>
+        <div>
+          <h2>Christophe Coussat</h2>
+          <div class="meta">GHE 51 · 06 12 32 34 86</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0612323486">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="willy canguio ghe 55 0609779931">
+      <div class="contact-main">
+        <div class="avatar">W</div>
+        <div>
+          <h2>Willy Canguio</h2>
+          <div class="meta">GHE 55 · 06 09 77 99 31</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609779931">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="acia tou diallo ghe 58 0776232095">
+      <div class="contact-main">
+        <div class="avatar">A</div>
+        <div>
+          <h2>Acia Tou Diallo</h2>
+          <div class="meta">GHE 58 · 07 76 23 20 95</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0776232095">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="mohamed mehiaoui ghe 61 0618888307">
+      <div class="contact-main">
+        <div class="avatar">M</div>
+        <div>
+          <h2>Mohamed Mehiaoui</h2>
+          <div class="meta">GHE 61 · 06 18 88 83 07</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0618888307">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="sammy vasconcelos ghe 63 0618886239">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Sammy Vasconcelos</h2>
+          <div class="meta">GHE 63 · 06 18 88 62 39</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0618886239">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="christine persouyre ghe 67 0609778181">
+      <div class="contact-main">
+        <div class="avatar">C</div>
+        <div>
+          <h2>Christine Persouyre</h2>
+          <div class="meta">GHE 67 · 06 09 77 81 81</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609778181">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="sherife berisha ghe 70 0620737358">
+      <div class="contact-main">
+        <div class="avatar">S</div>
+        <div>
+          <h2>Sherife Berisha</h2>
+          <div class="meta">GHE 70 · 06 20 73 73 58</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0620737358">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="daniel abou kash ghe 73 0621164167">
+      <div class="contact-main">
+        <div class="avatar">D</div>
+        <div>
+          <h2>Daniel Abou Kash</h2>
+          <div class="meta">GHE 73 · 06 21 16 41 67</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0621164167">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="asmaa belfakir ghe 74 0609775788">
+      <div class="contact-main">
+        <div class="avatar">A</div>
+        <div>
+          <h2>Asmaa Belfakir</h2>
+          <div class="meta">GHE 74 · 06 09 77 57 88</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609775788">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="faical djelassi ghe 75 0776232088">
+      <div class="contact-main">
+        <div class="avatar">F</div>
+        <div>
+          <h2>Faical Djelassi</h2>
+          <div class="meta">GHE 75 · 07 76 23 20 88</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0776232088">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="vincent tiberghien ghe 76 0609777617">
+      <div class="contact-main">
+        <div class="avatar">V</div>
+        <div>
+          <h2>Vincent Tiberghien</h2>
+          <div class="meta">GHE 76 · 06 09 77 76 17</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609777617">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="frederic dandis ghe 77 0609777389">
+      <div class="contact-main">
+        <div class="avatar">F</div>
+        <div>
+          <h2>Frederic Dandis</h2>
+          <div class="meta">GHE 77 · 06 09 77 73 89</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0609777389">Appeler</a>
+    </article>
+    <article class="contact-card" data-search="jawad bekka ghe 78 0628475675">
+      <div class="contact-main">
+        <div class="avatar">J</div>
+        <div>
+          <h2>Jawad Bekka</h2>
+          <div class="meta">GHE 78 · 06 28 47 56 75</div>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:0628475675">Appeler</a>
+    </article>
+  </section>
+  <div id="empty" class="empty">Aucun contact correspondant.</div>
 </main>
-
 <nav class="bottom-nav">
-  <a href="index.html" class=""><span class="ico">🏠</span><span>Accueil</span></a>
-  <a href="commencer.html" class=""><span class="ico">🧭</span><span>Parcours</span></a>
-  <a href="hopitaux.html" class=""><span class="ico">🏥</span><span>Hôpitaux</span></a>
+  <a href="hopitaux.html"><span class="ico">🏥</span><span>Hôpitaux</span></a>
+  <a href="reflexes.html"><span class="ico">✅</span><span>Réflexes</span></a>
+  <a href="index.html" class="home-center"><span class="ico">🏠</span><span>Accueil</span></a>
   <a href="contacts.html" class="active"><span class="ico">📞</span><span>Contacts</span></a>
+  <a href="formulaires.html"><span class="ico">📝</span><span>Formulaires</span></a>
 </nav>
 </div>
-<script src="assets/app.js"></script>
+<script>
+const input=document.getElementById('search');
+const cards=[...document.querySelectorAll('.contact-card')];
+const count=document.getElementById('count');
+const empty=document.getElementById('empty');
+input.addEventListener('input',()=>{
+  const q=input.value.trim().toLowerCase();
+  let visible=0;
+  cards.forEach(card=>{
+    const show=card.dataset.search.includes(q);
+    card.style.display=show?'grid':'none';
+    if(show) visible++;
+  });
+  count.textContent=`${visible} contact${visible>1?'s':''} affiché${visible>1?'s':''}`;
+  empty.style.display=visible?'none':'block';
+});
+</script>
 </body>
 </html>

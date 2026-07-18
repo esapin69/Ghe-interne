@@ -1,56 +1,30 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b2f56">
-<title>Bienvenue</title>
-<link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<div class="app">
-<header class="hero">
-<div class="kicker">Brancardage</div>
-<h1>Bienvenue</h1>
-<p>Vos repères pour commencer sereinement et suivre votre parcours d’arrivée.</p>
-</header>
-<main>
-<div class="card mandatory-card" data-day-reminder>
-  <div class="progress-wrap"><div class="progress"><span data-progress-bar></span></div><div class="progress-text" data-progress-text></div></div>
-  <h2>Votre point de première journée reste à terminer</h2>
-  <p>Cette étape fait partie du parcours d’arrivée et permet d’identifier les repères acquis et ce qu’il serait utile de revoir.</p>
-  <a class="btn primary" href="bilan-journee.html">Terminer mon étape</a>
-</div>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Bienvenue</title><link rel="stylesheet" href="assets/style.css"></head><body data-form-type=""><div class="app"><header class="hero"><div class="kicker">Brancardage</div><h1>Bienvenue</h1><p>Choisissez l’étape qui correspond à votre arrivée.</p></header><main>
+<div class="note blue"><strong>Commencez par la situation qui correspond à votre arrivée.</strong></div>
+<h2 class="section-title">Votre parcours</h2>
 
-<div class="card mandatory-card hidden" data-week-reminder>
-  <h2>Votre point de fin de semaine reste à terminer</h2>
-  <p>Cette dernière étape permet de faire le bilan avant la poursuite en autonomie.</p>
-  <a class="btn primary" href="bilan-semaine.html">Terminer mon parcours de première semaine</a>
-</div>
+<a class="card home-step" href="premiers-jours.html">
+  <div class="step-icon">👋</div>
+  <div><span class="badge">1 · Sans badge</span><h2>Mes premiers jours</h2><p>Accès, arrivée, tenue, repères et premiers réflexes.</p></div>
+  <div class="arrow">›</div>
+</a>
 
-<h2 class="section-title">Mon parcours</h2>
-<a class="card action" href="commencer.html">
-  <div class="icon">🧭</div>
-  <div><h2>Mon parcours d’arrivée</h2><p>Voir ce qui est terminé, en cours et à venir.</p></div>
+<a class="card home-step" href="premieres-missions.html">
+  <div class="step-icon">🛏️</div>
+  <div><span class="badge">2 · En binôme</span><h2>Mes premières missions</h2><p>Découvrir une journée type avec un agent et comprendre ce qui est attendu.</p></div>
+  <div class="arrow">›</div>
+</a>
+
+<a class="card home-step" href="autonomie.html">
+  <div class="step-icon">📱</div>
+  <div><span class="badge">3 · Avec mes outils</span><h2>Je travaille en autonomie</h2><p>Utiliser le téléphone, gérer une mission et savoir demander de l’aide.</p></div>
   <div class="arrow">›</div>
 </a>
 
 <h2 class="section-title">Accès rapides</h2>
-<div class="grid">
-  <a class="card" href="hopitaux.html"><div class="icon" style="background:var(--green)">🏥</div><h3 style="margin-top:14px">Hôpitaux</h3><p>Se repérer sans perdre de temps.</p></a>
-  <a class="card" href="contacts.html"><div class="icon" style="background:var(--orange)">📞</div><h3 style="margin-top:14px">Contacts</h3><p>Trouver qui appeler.</p></a>
-  <a class="card" href="reflexes.html"><div class="icon" style="background:var(--purple)">✅</div><h3 style="margin-top:14px">Réflexes</h3><p>Vérifier l’essentiel.</p></a>
-  <a class="card" href="aide.html"><div class="icon">❓</div><h3 style="margin-top:14px">Un doute</h3><p>Savoir quoi faire.</p></a>
+<div class="grid two">
+  <a class="card" href="hopitaux.html"><h3>Hôpitaux</h3><p>Entrées et repères utiles.</p></a>
+  <a class="card" href="contacts.html"><h3>Contacts</h3><p>Régulation, équipe et chefs.</p></a>
+  <a class="card" href="reflexes.html"><h3>Réflexes</h3><p>La trame d’un transport sûr.</p></a>
+  <a class="card" href="formulaires.html"><h3>Formulaires</h3><p>Faire le point sur son arrivée.</p></a>
 </div>
-</main>
-
-<nav class="bottom-nav">
-  <a href="index.html" class="active"><span class="ico">🏠</span><span>Accueil</span></a>
-  <a href="commencer.html" class=""><span class="ico">🧭</span><span>Parcours</span></a>
-  <a href="hopitaux.html" class=""><span class="ico">🏥</span><span>Hôpitaux</span></a>
-  <a href="contacts.html" class=""><span class="ico">📞</span><span>Contacts</span></a>
-</nav>
-</div>
-<script src="assets/app.js"></script>
-</body>
-</html>
+</main><nav class="bottom-nav"><a href="hopitaux.html" class=" "><span class="ico">🏥</span><span>Hôpitaux</span></a><a href="reflexes.html" class=" "><span class="ico">✅</span><span>Réflexes</span></a><a href="index.html" class="home-center active"><span class="ico">🏠</span><span>Accueil</span></a><a href="contacts.html" class=" "><span class="ico">📞</span><span>Contacts</span></a><a href="formulaires.html" class=" "><span class="ico">📝</span><span>Formulaires</span></a></nav></div><script src="assets/app.js"></script></body></html>
