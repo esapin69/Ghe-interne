@@ -1,42 +1,111 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Mon parcours d’arrivée</title><link rel="stylesheet" href="assets/style.css"></head><body data-form-type=""><div class="app"><header class="hero"><div class="kicker">Parcours professionnel</div><h1>Mon parcours d’arrivée</h1><p>Vous validez vous-même les étapes réalisées. Les deux bilans se valident uniquement après leur transmission.</p></header><main>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b2f56">
+<title>Mon parcours d’arrivée</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+<header class="hero">
+<div class="kicker">Parcours professionnel</div>
+<h1>Mon parcours d’arrivée</h1>
+<p>Chaque étape comporte maintenant un objectif clair avant validation.</p>
+</header>
+<main>
 <div class="card">
-  <div class="progress-wrap"><div class="progress"><span data-progress-bar></span></div><div class="progress-text" data-progress-text></div></div>
-  
-<div class="stage" data-step-key="ghe_step_arrival">
-  <div class="stage-num">1</div>
-  <div><h3>Mon arrivée</h3><p>Me présenter, récupérer ma tenue et identifier mes premiers contacts.</p><button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.arrival)" style="margin-top:9px">Marquer comme terminé</button></div>
-  <span class="status todo">À faire</span>
-</div>
-<div class="stage" data-step-key="ghe_step_discovery">
-  <div class="stage-num">2</div>
-  <div><h3>Je découvre le service</h3><p>Comprendre les secteurs, les hôpitaux, les outils et le fonctionnement de l’équipe.</p><button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.discovery)" style="margin-top:9px">Marquer comme terminé</button></div>
-  <span class="status todo">À faire</span>
-</div>
-<div class="stage" data-step-key="ghe_step_missions">
-  <div class="stage-num">3</div>
-  <div><h3>Mes premières missions</h3><p>Observer, participer avec accompagnement et appliquer les premiers réflexes.</p><button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.missions)" style="margin-top:9px">Marquer comme terminé</button></div>
-  <span class="status todo">À faire</span>
-</div>
-<div class="stage" data-step-key="ghe_step_day">
-  <div class="stage-num">4</div>
-  <div><h3>Point de fin de journée</h3><p>Cette étape est validée automatiquement après l’envoi du bilan.</p><a class="btn secondary" href="bilan-journee.html" style="margin-top:9px">Ouvrir cette étape</a></div>
-  <span class="status todo">À faire</span>
-</div>
-<div class="stage" data-step-key="ghe_step_week">
-  <div class="stage-num">5</div>
-  <div><h3>Ma première semaine</h3><p>Développer progressivement mon autonomie et rencontrer plusieurs situations.</p><button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.week)" style="margin-top:9px">Marquer comme terminé</button></div>
-  <span class="status todo">À faire</span>
-</div>
-<div class="stage" data-step-key="ghe_step_week_review">
-  <div class="stage-num">6</div>
-  <div><h3>Point de fin de semaine</h3><p>Cette étape est validée automatiquement après l’envoi du bilan.</p><a class="btn secondary" href="bilan-semaine.html" style="margin-top:9px">Ouvrir cette étape</a></div>
-  <span class="status todo">À faire</span>
-</div>
+  <div class="progress-wrap">
+    <div class="progress"><span data-progress-bar></span></div>
+    <div class="progress-text" data-progress-text></div>
+  </div>
+
+  <div class="stage" data-step-key="ghe_step_arrival">
+    <div class="stage-num">1</div>
+    <div>
+      <h3>Mon arrivée</h3>
+      <p>Me présenter à l’équipe, récupérer ma tenue avec une personne disposant de l’accès et identifier les contacts utiles.</p>
+      <div class="detail-card">
+        <h3>À vérifier avant de terminer</h3>
+        <p>Je sais où me présenter, comment récupérer ma tenue et qui contacter si je suis bloqué.</p>
+      </div>
+      <button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.arrival)" style="margin-top:10px">Marquer comme terminé</button>
+    </div>
+    <span class="status todo">À faire</span>
+  </div>
+
+  <div class="stage" data-step-key="ghe_step_discovery">
+    <div class="stage-num">2</div>
+    <div>
+      <h3>Je découvre le service</h3>
+      <p>Identifier les trois hôpitaux, les principaux secteurs, le rôle de la régulation et le fonctionnement général de l’équipe.</p>
+      <div class="detail-card">
+        <h3>À vérifier avant de terminer</h3>
+        <p>Je sais reconnaître HFME, Neurologie et Cardiologie et je sais vers qui me tourner en cas de doute.</p>
+      </div>
+      <button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.discovery)" style="margin-top:10px">Marquer comme terminé</button>
+    </div>
+    <span class="status todo">À faire</span>
+  </div>
+
+  <div class="stage" data-step-key="ghe_step_missions">
+    <div class="stage-num">3</div>
+    <div>
+      <h3>Mes premières missions</h3>
+      <p>Observer, participer avec accompagnement et appliquer les réflexes essentiels avant, pendant et après le transport.</p>
+      <div class="detail-card">
+        <h3>À vérifier avant de terminer</h3>
+        <p>J’ai réalisé des missions accompagné et je connais les contrôles indispensables.</p>
+      </div>
+      <button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.missions)" style="margin-top:10px">Marquer comme terminé</button>
+    </div>
+    <span class="status todo">À faire</span>
+  </div>
+
+  <div class="stage" data-step-key="ghe_step_day">
+    <div class="stage-num">4</div>
+    <div>
+      <h3>Point de fin de journée</h3>
+      <p>Cette étape se valide uniquement après la transmission du bilan.</p>
+      <a class="btn primary" href="bilan-journee.html" style="margin-top:10px">Terminer cette étape</a>
+    </div>
+    <span class="status todo">À faire</span>
+  </div>
+
+  <div class="stage" data-step-key="ghe_step_week">
+    <div class="stage-num">5</div>
+    <div>
+      <h3>Ma première semaine</h3>
+      <p>Rencontrer plusieurs situations, développer mes repères et progresser vers une autonomie adaptée.</p>
+      <div class="detail-card">
+        <h3>À vérifier avant de terminer</h3>
+        <p>J’ai rencontré plusieurs secteurs et je sais demander de l’aide sans prendre de risque.</p>
+      </div>
+      <button class="btn secondary" data-step-toggle onclick="toggleStep(STEPS.week)" style="margin-top:10px">Marquer comme terminé</button>
+    </div>
+    <span class="status todo">À faire</span>
+  </div>
+
+  <div class="stage" data-step-key="ghe_step_week_review">
+    <div class="stage-num">6</div>
+    <div>
+      <h3>Point de fin de semaine</h3>
+      <p>Cette étape se valide uniquement après la transmission du bilan de semaine.</p>
+      <a class="btn primary" href="bilan-semaine.html" style="margin-top:10px">Terminer mon parcours de première semaine</a>
+    </div>
+    <span class="status todo">À faire</span>
+  </div>
 </div>
 </main>
+
 <nav class="bottom-nav">
-<a href="index.html" class=""><span class="ico">🏠</span><span>Accueil</span></a>
-<a href="commencer.html" class="active"><span class="ico">🧭</span><span>Parcours</span></a>
-<a href="hopitaux.html"><span class="ico">🏥</span><span>Hôpitaux</span></a>
-<a href="contacts.html"><span class="ico">📞</span><span>Contacts</span></a>
-</nav></div><script src="assets/app.js"></script></body></html>
+  <a href="index.html" class=""><span class="ico">🏠</span><span>Accueil</span></a>
+  <a href="commencer.html" class="active"><span class="ico">🧭</span><span>Parcours</span></a>
+  <a href="hopitaux.html" class=""><span class="ico">🏥</span><span>Hôpitaux</span></a>
+  <a href="contacts.html" class=""><span class="ico">📞</span><span>Contacts</span></a>
+</nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

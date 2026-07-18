@@ -1,44 +1,71 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b2f56"><title>Les hôpitaux</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><header class="hero"><div class="kicker">Repérage</div><h1>Les hôpitaux</h1><p>Choisissez l’hôpital en appuyant directement sur sa photo.</p></header><main>
-<div class="hospital-tabs">
-  <button class="hospital-tab active" data-target="hfme"><img src="Image/Bâtiment/Bat_hfme.JPG" alt="HFME"><strong>HFME</strong></button>
-  <button class="hospital-tab" data-target="neuro"><img src="Image/Bâtiment/Bat_neuro_B.JPG" alt="Neurologie"><strong>Neurologie</strong></button>
-  <button class="hospital-tab" data-target="cardio"><img src="Image/Bâtiment/Bat_cardio.JPG" alt="Cardiologie"><strong>Cardiologie</strong></button>
-</div>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b2f56">
+<title>Les hôpitaux</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+<header class="hero">
+<div class="kicker">Repérage</div>
+<h1>Les hôpitaux</h1>
+<p>Appuyez sur la photo de l’hôpital pour afficher ses repères.</p>
+</header>
+<main>
+<section class="hospital-list">
+  <details class="hospital-item" open>
+    <summary>
+      <img class="hospital-photo" src="Image/Bâtiment/Bat_hfme.JPG" alt="Entrée de l’Hôpital Femme-Mère-Enfant">
+      <div class="hospital-overlay"><strong>HFME</strong><span>Hôpital Femme-Mère-Enfant</span></div>
+      <div class="hospital-chevron">›</div>
+    </summary>
+    <div class="hospital-content">
+      <h2>Hôpital Femme-Mère-Enfant</h2>
+      <div class="chips"><span class="chip">Entrée principale</span><span class="chip">Ascenseur vert</span><span class="chip">2e étage</span></div>
+      <p>Entrez par l’entrée principale, allez au fond du hall puis à droite. Passez devant l’ascenseur bleu pour rejoindre l’ascenseur vert.</p>
+      <div class="note yellow" style="margin-top:14px"><strong>Sans badge :</strong> appelez la régulation depuis l’ascenseur vert et demandez l’accès au 2e étage.</div>
+      <a class="btn call" href="tel:0426739352" style="width:100%;margin-top:13px">📞 Appeler la régulation</a>
+    </div>
+  </details>
 
-<section id="hfme" class="hospital-panel active">
-  <div class="card">
-    <img class="hero-image" src="Image/Bâtiment/Bat_hfme.JPG" alt="Entrée HFME">
-    <h2 style="margin-top:15px">Hôpital Femme-Mère-Enfant</h2>
-    <div class="chips"><span class="chip">Entrée principale</span><span class="chip">Ascenseur vert</span><span class="chip">2e étage</span></div>
-    <div class="note yellow" style="margin-top:14px"><strong>Sans badge :</strong> appeler la régulation avant d’utiliser l’ascenseur vert.</div>
-    <a class="btn call" href="tel:0426739352" style="width:100%;margin-top:12px">📞 Appeler la régulation</a>
-    <a class="btn disabled" href="#" style="width:100%;margin-top:9px">📍 Point GPS à renseigner</a>
-  </div>
-</section>
+  <details class="hospital-item">
+    <summary>
+      <img class="hospital-photo" src="Image/Bâtiment/Bat_neuro_B.JPG" alt="Entrée B de l’Hôpital neurologique">
+      <div class="hospital-overlay"><strong>Neurologie</strong><span>Entrée B</span></div>
+      <div class="hospital-chevron">›</div>
+    </summary>
+    <div class="hospital-content">
+      <h2>Hôpital neurologique</h2>
+      <div class="chips"><span class="chip">Entrée B</span></div>
+      <p>Utilisez l’entrée B.</p>
+    </div>
+  </details>
 
-<section id="neuro" class="hospital-panel">
-  <div class="card">
-    <img class="hero-image" src="Image/Bâtiment/Bat_neuro_B.JPG" alt="Entrée B Neurologie">
-    <h2 style="margin-top:15px">Hôpital neurologique</h2>
-    <div class="chips"><span class="chip">Entrée B</span></div>
-    <p style="margin-top:13px">Les indications détaillées seront ajoutées dès validation des repères terrain.</p>
-    <a class="btn disabled" href="#" style="width:100%;margin-top:12px">📍 Point GPS à renseigner</a>
-  </div>
-</section>
-
-<section id="cardio" class="hospital-panel">
-  <div class="card">
-    <img class="hero-image" src="Image/Bâtiment/Bat_cardio.JPG" alt="Entrée Cardiologie">
-    <h2 style="margin-top:15px">Hôpital cardiologique Louis Pradel</h2>
-    <div class="chips"><span class="chip">Entrée principale</span></div>
-    <p style="margin-top:13px">Les indications détaillées seront ajoutées dès validation des repères terrain.</p>
-    <a class="btn disabled" href="#" style="width:100%;margin-top:12px">📍 Point GPS à renseigner</a>
-  </div>
+  <details class="hospital-item">
+    <summary>
+      <img class="hospital-photo" src="Image/Bâtiment/Bat_cardio.JPG" alt="Entrée principale de l’Hôpital cardiologique Louis Pradel">
+      <div class="hospital-overlay"><strong>Cardiologie</strong><span>Hôpital Louis Pradel</span></div>
+      <div class="hospital-chevron">›</div>
+    </summary>
+    <div class="hospital-content">
+      <h2>Hôpital cardiologique Louis Pradel</h2>
+      <div class="chips"><span class="chip">Entrée principale</span></div>
+      <p>Utilisez l’entrée principale.</p>
+    </div>
+  </details>
 </section>
 </main>
-    <nav class="bottom-nav">
-      <a href="index.html" class=""><span class="ico">🏠</span><span>Accueil</span></a>
-      <a href="commencer.html" class=""><span class="ico">👋</span><span>Je commence</span></a>
-      <a href="hopitaux.html" class="active"><span class="ico">🏥</span><span>Hôpitaux</span></a>
-      <a href="contacts.html" class=""><span class="ico">📞</span><span>Contacts</span></a>
-    </nav></div><script src="assets/app.js"></script></body></html>
+
+<nav class="bottom-nav">
+  <a href="index.html" class=""><span class="ico">🏠</span><span>Accueil</span></a>
+  <a href="commencer.html" class=""><span class="ico">🧭</span><span>Parcours</span></a>
+  <a href="hopitaux.html" class="active"><span class="ico">🏥</span><span>Hôpitaux</span></a>
+  <a href="contacts.html" class=""><span class="ico">📞</span><span>Contacts</span></a>
+</nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
