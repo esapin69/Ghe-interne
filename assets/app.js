@@ -1,5 +1,5 @@
 
-const CONFIG={APPS_SCRIPT_URL:"COLLER_ICI_LE_NOUVEAU_LIEN_APPS_SCRIPT_EXEC"};
+const CONFIG={APPS_SCRIPT_URL:"https://script.google.com/macros/s/AKfycbyT31o3uSvwy-WrVZ4QGRQ8u9js6tpC4a1bzUy3VHl_ccySpAnFnjjPzzj3Vcrco6X_/exec"};
 document.addEventListener("click",e=>{const c=e.target.closest(".choice");if(!c)return;const g=c.parentElement;g.querySelectorAll(".choice").forEach(x=>x.classList.remove("selected"));c.classList.add("selected");const h=g.nextElementSibling;if(h&&h.type==="hidden")h.value=c.dataset.value||c.textContent.trim()});
 document.querySelectorAll('input[type="range"]').forEach(r=>{const o=document.querySelector(`[data-range="${r.id}"]`);const u=()=>{if(o)o.textContent=`${r.value} %`};r.addEventListener("input",u);u()});
 function escapeHtml(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
