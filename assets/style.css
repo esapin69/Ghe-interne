@@ -29,3 +29,14 @@ main{padding:18px 15px 30px}.section-title{margin:24px 4px 11px;color:var(--navy
 .error-list{counter-reset:error;display:grid;gap:9px}.error-item{counter-increment:error;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:11px;border-radius:15px;background:var(--red-soft);border:1px solid #efc5c9}.error-item:before{content:counter(error);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#b42b39;color:white;font-weight:900}.error-item p{margin:4px 0 0;color:#7a3a42;font-size:13px;line-height:1.4}
 @media(max-width:560px){.journey{grid-template-columns:1fr}.journey-step{min-height:auto;display:grid;grid-template-columns:36px 1fr;gap:10px;text-align:left;align-items:center}.journey-step .phase-num{margin:0}.journey-step small{margin-top:2px}.module-grid{grid-template-columns:1fr}}
 @media(max-width:420px){.grid.two,.choice-grid{grid-template-columns:1fr}.hospital-photo{height:155px}.bottom-nav a{font-size:8.5px}.contact-card{grid-template-columns:1fr}.contact-card .btn{width:100%}}
+
+/* Distinction nette entre informations et actions */
+.info-panel{margin-bottom:18px;border-left:4px solid var(--cyan);padding:2px 3px 4px 14px}
+.info-panel h2{margin:0 0 7px;color:var(--navy);font-size:18px}
+.info-panel p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.action-card{position:relative;border:2px solid #b9d4e8;box-shadow:0 10px 24px rgba(8,47,87,.12);cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+.action-card:active{transform:scale(.985);box-shadow:0 5px 14px rgba(8,47,87,.14)}
+.action-label{display:inline-flex;margin-top:9px;padding:6px 10px;border-radius:999px;background:var(--navy);color:#fff;font-size:11px;font-weight:900}
+a.card{cursor:pointer;border-color:#b9d4e8}
+div.card,section.card{cursor:default}
+.section-title,.section-sub,.note,.info-panel{cursor:default}
